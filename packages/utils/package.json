@@ -1,0 +1,25 @@
+{
+  "name": "@amber-cli-dev/utils",
+  "version": "1.0.0",
+  "description": "@amber-cli-dev utils",
+  "author": "newrank_hejuan <hejuan1022@126.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/utils.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com/"
+  },
+  "scripts": {
+    "test": "node ./__tests__/utils.test.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
