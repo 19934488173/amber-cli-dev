@@ -3,5 +3,5 @@
 module.exports = utils;
 
 function utils() {
-    return 100;
+    return 100000;
 }
