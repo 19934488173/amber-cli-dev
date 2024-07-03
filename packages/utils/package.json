@@ -20,7 +20,6 @@
     "test": "node ./__tests__/utils.test.js"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
   },
   "gitHead": "ab5bcff70a675c6d120c72de22365054bfbccdce"
 }
