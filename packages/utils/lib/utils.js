@@ -1,7 +1,7 @@
-'use strict';
 
-module.exports = utils;
 
 function utils() {
-    return 100000;
+    return "Hello from utils";
 }
+
+module.exports = utils;
