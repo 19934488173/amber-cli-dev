@@ -1,6 +1,6 @@
 {
   "name": "@amber-cli-dev/core",
-  "version": "0.0.8",
+  "version": "0.0.0",
   "description": "@amber-cli-dev core",
   "author": "newrank_hejuan <hejuan1022@126.com>",
   "homepage": "",
@@ -21,5 +21,6 @@
   },
   "gitHead": "ab5bcff70a675c6d120c72de22365054bfbccdce",
   "dependencies": {
+    "dayjs": "^1.11.11"
   }
 }

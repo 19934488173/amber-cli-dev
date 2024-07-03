@@ -1,6 +1,6 @@
 {
   "name": "@amber-cli-dev/utils",
-  "version": "0.0.8",
+  "version": "0.0.0",
   "description": "@amber-cli-dev utils",
   "author": "newrank_hejuan <hejuan1022@126.com>",
   "homepage": "",
@@ -20,6 +20,7 @@
     "test": "node ./__tests__/utils.test.js"
   },
   "dependencies": {
+    "lodash": "^4.17.21"
   },
   "gitHead": "ab5bcff70a675c6d120c72de22365054bfbccdce"
 }
