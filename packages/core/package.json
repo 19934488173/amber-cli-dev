@@ -19,8 +19,5 @@
   "scripts": {
     "test": "node ./__tests__/core.test.js"
   },
-  "gitHead": "7ffe8b63c83a9d7ce039dc4194000e3ba52f2f6f",
-  "dependencies": {
-    "dayjs": "^1.11.11"
-  }
+  "gitHead": "7ffe8b63c83a9d7ce039dc4194000e3ba52f2f6f"
 }
