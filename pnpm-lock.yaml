@@ -12,7 +12,11 @@ importers:
         specifier: ^8.1.5
         version: 8.1.5
 
-  packages/core: {}
+  packages/core:
+    dependencies:
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
 
   packages/utils:
     dependencies:

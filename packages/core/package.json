@@ -19,5 +19,8 @@
   "scripts": {
     "test": "node ./__tests__/core.test.js"
   },
-  "gitHead": "ace5179172de14fb1c66ba8e4c39fc72cadbfa57"
+  "gitHead": "ace5179172de14fb1c66ba8e4c39fc72cadbfa57",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
