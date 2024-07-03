@@ -4,7 +4,7 @@
   "description": "@amber-cli-dev core",
   "author": "newrank_hejuan <hejuan1022@126.com>",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "lib/core.js",
   "directories": {
     "lib": "lib",
@@ -19,7 +19,7 @@
   "scripts": {
     "test": "node ./__tests__/core.test.js"
   },
-  "gitHead": "ace5179172de14fb1c66ba8e4c39fc72cadbfa57",
+  "gitHead": "ab5bcff70a675c6d120c72de22365054bfbccdce",
   "dependencies": {
     "lodash": "^4.17.21"
   }

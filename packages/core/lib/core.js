@@ -3,6 +3,5 @@
 module.exports = core;
 
 function core() {
-    const b = "Hello from core,zkdfsdhf woeihf .";
-  return b;
+  return "Hello from core";
 }

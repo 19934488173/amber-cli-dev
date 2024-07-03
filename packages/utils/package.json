@@ -4,7 +4,7 @@
   "description": "@amber-cli-dev utils",
   "author": "newrank_hejuan <hejuan1022@126.com>",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "lib/utils.js",
   "directories": {
     "lib": "lib",
@@ -22,5 +22,5 @@
   "dependencies": {
     "lodash": "^4.17.21"
   },
-  "gitHead": "ace5179172de14fb1c66ba8e4c39fc72cadbfa57"
+  "gitHead": "ab5bcff70a675c6d120c72de22365054bfbccdce"
 }
