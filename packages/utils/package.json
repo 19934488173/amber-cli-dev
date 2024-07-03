@@ -14,12 +14,13 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://registry.npmmirror.com/"
+    "access": "public"
   },
   "scripts": {
     "test": "node ./__tests__/utils.test.js"
   },
   "dependencies": {
     "lodash": "^4.17.21"
-  }
+  },
+  "gitHead": "ace5179172de14fb1c66ba8e4c39fc72cadbfa57"
 }
