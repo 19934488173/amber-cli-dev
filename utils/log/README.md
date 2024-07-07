@@ -1,11 +1,11 @@
-# `core`
+# `@amber-cli-dev/log`
 
 > TODO: description
 
 ## Usage
 
 ```
-const core = require('core');
+const log = require('@amber-cli-dev/log');
 
 // TODO: DEMONSTRATE API
 ```

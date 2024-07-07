@@ -1,0 +1,35 @@
+{
+	"name": "@amber-cli-dev/cli",
+	"version": "1.0.1",
+	"description": "> TODO: description",
+	"author": "amberHe <1542588809@qq.com>",
+	"homepage": "https://github.com/19934488173/amber-cli-dev#readme",
+	"license": "ISC",
+	"main": "lib/index.js",
+	"directories": {
+		"lib": "lib",
+		"test": "__tests__"
+	},
+	"bin": {
+		"amber-cli-dev": "bin/index.js"
+	},
+	"dependencies": {
+		"@amber-cli-dev/log": "workspace:*"
+	},
+	"files": [
+		"lib"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/19934488173/amber-cli-dev.git"
+	},
+	"scripts": {
+		"test": "node ./__tests__/@amber-cli-dev/cli.test.js"
+	},
+	"bugs": {
+		"url": "https://github.com/19934488173/amber-cli-dev/issues"
+	}
+}

@@ -1,11 +1,11 @@
-# `utils`
+# `@amber-cli-dev/cli`
 
 > TODO: description
 
 ## Usage
 
 ```
-const utils = require('utils');
+const cli = require('@amber-cli-dev/cli');
 
 // TODO: DEMONSTRATE API
 ```
