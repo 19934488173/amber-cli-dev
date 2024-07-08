@@ -1,9 +1,12 @@
 'use strict';
 
-const log = require('npmlog');
+import log from 'npmlog'
 
-module.exports = index;
+log.level = process.env.LOG_LEVEL ? process.env.LOG_LEVEL : 'info';
 
-function index() {
-  log.info('cli', 'test')
-}
+log.heading = 'amber-cli-dev';
+
+log.addLevel('success', 2000, { fg: "green", bold: true });
+
+export default log;
+

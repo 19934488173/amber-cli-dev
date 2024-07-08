@@ -5,6 +5,7 @@
 	"author": "amberHe <1542588809@qq.com>",
 	"homepage": "https://github.com/19934488173/amber-cli-dev#readme",
 	"license": "ISC",
+	"type": "module",
 	"main": "lib/index.js",
 	"directories": {
 		"lib": "lib",
@@ -14,7 +15,10 @@
 		"amber-cli-dev": "bin/index.js"
 	},
 	"dependencies": {
-		"@amber-cli-dev/log": "workspace:*"
+		"@amber-cli-dev/log": "workspace:*",
+		"colors": "^1.4.0",
+		"root-check": "^2.0.0",
+		"semver": "^7.6.2"
 	},
 	"files": [
 		"lib"

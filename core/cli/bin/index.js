@@ -1,9 +1,15 @@
 #! /usr/bin/env node
 
-const importLocal = require('import-local');
+import importLocal from 'import-local';
+import { fileURLToPath } from 'url';
+import lib from '../lib/index.js';
+
+const __filename = fileURLToPath(import.meta.url);
 
 if (importLocal(__filename)) {
-	require('npmlog').info('cli', '正在使用 amber-cli 本地版本');
+	console.log('cli', '正在使用 amber-cli 本地版本');
 } else {
-	require('../lib')(process.argv.slice(2));
+	lib(process.argv.slice(2));
 }
+
+
