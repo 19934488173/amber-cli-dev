@@ -4,6 +4,8 @@ import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import process from 'node:process';
+import userhome from 'userhome';
+import { pathExists } from 'path-exists';
 
 import semver from 'semver';
 import colors from 'colors';
@@ -19,10 +21,20 @@ export default function cli(args) {
 		checkPkgVersion();
 		checkNodeVersion();
 		checkRoot();
+		checkUserHome();
+
 	} catch (error) {
 		log.error(error.message);
 	}
 
+}
+
+
+/** 检查用户主目录 */
+function checkUserHome() {
+	if (!userhome || !pathExists(userhome)) {
+		throw new Error(colors.red('当前登录用户主目录不存在!'))
+	}
 }
 
 

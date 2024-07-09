@@ -17,8 +17,10 @@
 	"dependencies": {
 		"@amber-cli-dev/log": "workspace:*",
 		"colors": "^1.4.0",
+		"path-exists": "^5.0.0",
 		"root-check": "^2.0.0",
-		"semver": "^7.6.2"
+		"semver": "^7.6.2",
+		"userhome": "^1.0.0"
 	},
 	"files": [
 		"lib"
