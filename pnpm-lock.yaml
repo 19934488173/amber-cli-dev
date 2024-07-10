@@ -33,12 +33,21 @@ importers:
 
   core/cli:
     dependencies:
+      '@amber-cli-dev/format-path':
+        specifier: workspace:*
+        version: link:../../utils/format-path
       '@amber-cli-dev/log':
         specifier: workspace:*
         version: link:../../utils/log
       colors:
         specifier: ^1.4.0
         version: 1.4.0
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
+      minimist:
+        specifier: ^1.2.8
+        version: 1.2.8
       path-exists:
         specifier: ^5.0.0
         version: 5.0.0
@@ -1457,7 +1466,6 @@ packages:
   /dotenv@16.4.5:
     resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
-    dev: true
 
   /downgrade-root@2.0.0:
     resolution: {integrity: sha512-tke0knZzG76FThh9diBex027u3qsoXv6PKZDva1fsEuqlzlstkcyoJgdHE/wQc2nBU1rnUcmhMUnQA3gucXc0Q==}
@@ -2627,7 +2635,6 @@ packages:
 
   /minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
-    dev: true
 
   /minipass-collect@2.0.1:
     resolution: {integrity: sha512-D7V8PO9oaz7PWGLbCACuI1qEOsq7UKfLotx/C0Aet43fCUB/wfQ7DYeq2oR/svFJGYDHPr38SHATeaj/ZoKHKw==}

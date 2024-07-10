@@ -16,7 +16,10 @@
 	},
 	"dependencies": {
 		"@amber-cli-dev/log": "workspace:*",
+		"@amber-cli-dev/format-path": "workspace:*",
 		"colors": "^1.4.0",
+		"dotenv": "^16.4.5",
+		"minimist": "^1.2.8",
 		"path-exists": "^5.0.0",
 		"root-check": "^2.0.0",
 		"semver": "^7.6.2",

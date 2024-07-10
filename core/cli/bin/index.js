@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 if (importLocal(__filename)) {
 	console.log('cli', '正在使用 amber-cli 本地版本');
 } else {
-	lib(process.argv.slice(2));
+	lib();
 }
 
 
