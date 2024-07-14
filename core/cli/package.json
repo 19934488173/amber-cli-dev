@@ -15,11 +15,15 @@
 		"amber-cli-dev": "bin/index.js"
 	},
 	"dependencies": {
-		"@amber-cli-dev/log": "workspace:*",
 		"@amber-cli-dev/format-path": "workspace:*",
+		"@amber-cli-dev/git-pnpm-info": "workspace:*",
+		"@amber-cli-dev/log": "workspace:*",
+		"@amber-cli-dev/init": "workspace:*",
+		"@amber-cli-dev/exec": "workspace:*",
+		"@amber-cli-dev/utils": "workspace:*",
 		"colors": "^1.4.0",
+		"commander": "^12.1.0",
 		"dotenv": "^16.4.5",
-		"minimist": "^1.2.8",
 		"path-exists": "^5.0.0",
 		"root-check": "^2.0.0",
 		"semver": "^7.6.2",

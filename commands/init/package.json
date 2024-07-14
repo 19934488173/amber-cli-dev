@@ -1,7 +1,7 @@
 {
-	"name": "@amber-cli-dev/git-pnpm-info",
+	"name": "@amber-cli-dev/init",
 	"version": "1.0.1",
-	"description": "> TODO: description",
+	"description": "amber-cli-dev init",
 	"author": "amberHe <1542588809@qq.com>",
 	"homepage": "https://github.com/19934488173/amber-cli-dev#readme",
 	"license": "ISC",
@@ -22,14 +22,9 @@
 		"url": "git+https://github.com/19934488173/amber-cli-dev.git"
 	},
 	"scripts": {
-		"test": "node ./__tests__/@amber-cli-dev/git-pnpm-info.test.js"
+		"test": "node ./__tests__/@amber-cli-dev/init.test.js"
 	},
 	"bugs": {
 		"url": "https://github.com/19934488173/amber-cli-dev/issues"
-	},
-	"dependencies": {
-		"axios": "^1.7.2",
-		"semver": "^7.6.2",
-		"url-join": "^5.0.0"
 	}
 }
