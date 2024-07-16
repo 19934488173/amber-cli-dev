@@ -1,5 +1,5 @@
 {
-	"name": "@amber-cli-dev/package",
+	"name": "@amber-cli-dev/add",
 	"version": "1.0.1",
 	"description": "> TODO: description",
 	"author": "amberHe <1542588809@qq.com>",
@@ -10,13 +10,6 @@
 	"directories": {
 		"lib": "lib",
 		"test": "__tests__"
-	},
-	"dependencies": {
-		"@amber-cli-dev/format-path": "workspace:*",
-		"@amber-cli-dev/utils": "workspace:*",
-		"@amber-cli-dev/git-pnpm-info": "workspace:*",
-		"npminstall": "^7.12.0",
-		"pkg-dir": "^8.0.0"
 	},
 	"files": [
 		"lib"
@@ -29,7 +22,7 @@
 		"url": "git+https://github.com/19934488173/amber-cli-dev.git"
 	},
 	"scripts": {
-		"test": "node ./__tests__/@amber-cli-dev/package.test.js"
+		"test": "node ./__tests__/@amber-cli-dev/add.test.js"
 	},
 	"bugs": {
 		"url": "https://github.com/19934488173/amber-cli-dev/issues"
