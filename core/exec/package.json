@@ -13,7 +13,8 @@
 	},
 	"dependencies": {
 		"@amber-cli-dev/package": "workspace:*",
-		"@amber-cli-dev/log": "workspace:*"
+		"@amber-cli-dev/log": "workspace:*",
+		"@amber-cli-dev/utils": "workspace:*"
 	},
 	"files": [
 		"lib"

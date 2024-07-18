@@ -3,10 +3,11 @@
 import path from 'path';
 import { packageDirectorySync } from 'pkg-dir';
 import npminstall from 'npminstall';
+import { pathExistsSync } from 'path-exists'
 
 import { isObject, parsePackageJSON } from '@amber-cli-dev/utils';
 import { formatPath } from '@amber-cli-dev/format-path';
-import { getDefaultRegistry } from '@amber-cli-dev/git-pnpm-info';
+import { getDefaultRegistry, getNpmLatestVersion } from '@amber-cli-dev/git-pnpm-info';
 
 
 class Package {
@@ -27,9 +28,31 @@ class Package {
     this.packageVersion = options.packageVersion;
   };
 
+  async prepare() {
+    //拿到最新的版本号
+    if (this.packageVersion === 'latest') {
+      this.packageVersion = await getNpmLatestVersion(this.packageName)
+    }
+    console.log(this.packageVersion)
+  }
+
+  //判断当前package是否存在
+  async exists() {
+    if (this.storeDir) {
+      console.log(111, this.storeDir)
+      await this.prepare();
+
+    } else {
+      return pathExistsSync(this.targetPath)
+    }
+
+  };
+
+
   //安装package
-  install() {
-    npminstall({
+  async install() {
+    await this.prepare();
+    return npminstall({
       root: this.targetPath,
       storeDir: this.storeDir,
       registry: getDefaultRegistry(),
@@ -39,6 +62,8 @@ class Package {
       }],
     });
   };
+
+
 
   // 获取入口文件路径
   getRootFilePath() {
@@ -54,7 +79,7 @@ class Package {
       }
     };
     return null;
-  }
+  };
 
 
 }

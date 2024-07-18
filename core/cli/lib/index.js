@@ -34,6 +34,9 @@ export default async function cli() {
 		registerCommand();
 	} catch (error) {
 		log.error(error.message);
+		if (process.env.LOG_LEVEL === 'verbose') {
+			console.log(error)
+		}
 	}
 };
 
