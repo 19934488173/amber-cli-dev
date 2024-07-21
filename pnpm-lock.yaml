@@ -30,7 +30,25 @@ importers:
 
   commands/add: {}
 
-  commands/init: {}
+  commands/init:
+    dependencies:
+      '@amber-cli-dev/command':
+        specifier: workspace:*
+        version: link:../../models/command
+      '@amber-cli-dev/log':
+        specifier: workspace:*
+        version: link:../../utils/log
+      '@amber-cli-dev/package':
+        specifier: workspace:*
+        version: link:../../models/package
+      '@amber-cli-dev/request':
+        specifier: workspace:*
+        version: link:../../utils/request
+      '@amber-cli-dev/utils':
+        specifier: workspace:*
+        version: link:../../utils/utils
+
+  commands/publish: {}
 
   core/cli:
     dependencies:
@@ -86,6 +104,22 @@ importers:
         specifier: workspace:*
         version: link:../../utils/utils
 
+  models/cloudbuild: {}
+
+  models/command:
+    dependencies:
+      '@amber-cli-dev/log':
+        specifier: workspace:*
+        version: link:../../utils/log
+      colors:
+        specifier: ^1.4.0
+        version: 1.4.0
+      semver:
+        specifier: ^7.6.2
+        version: 7.6.2
+
+  models/git: {}
+
   models/package:
     dependencies:
       '@amber-cli-dev/format-path':
@@ -97,6 +131,9 @@ importers:
       '@amber-cli-dev/utils':
         specifier: workspace:*
         version: link:../../utils/utils
+      fs-extra:
+        specifier: ^11.2.0
+        version: 11.2.0
       npminstall:
         specifier: ^7.12.0
         version: 7.12.0
@@ -126,6 +163,8 @@ importers:
       npmlog:
         specifier: ^7.0.1
         version: 7.0.1
+
+  utils/request: {}
 
   utils/utils: {}
 
@@ -2122,7 +2161,6 @@ packages:
       graceful-fs: 4.2.11
       jsonfile: 6.1.0
       universalify: 2.0.1
-    dev: true
 
   /fs-extra@7.0.1:
     resolution: {integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==}
@@ -2811,7 +2849,6 @@ packages:
       universalify: 2.0.1
     optionalDependencies:
       graceful-fs: 4.2.11
-    dev: true
 
   /jsonparse@1.3.1:
     resolution: {integrity: sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==}
@@ -4947,7 +4984,6 @@ packages:
   /universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
-    dev: true
 
   /upath@2.0.1:
     resolution: {integrity: sha512-1uEe95xksV1O0CYKXo8vQvN1JEbtJp7lb7C5U9HMsIp6IVwntkH/oNUzyVNQSd4S1sYk2FpSSW44FqMc8qee5w==}

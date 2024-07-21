@@ -1,7 +1,7 @@
 {
-	"name": "@amber-cli-dev/init",
+	"name": "@amber-cli-dev/publish",
 	"version": "1.0.1",
-	"description": "amber-cli-dev init",
+	"description": "amber-cli-dev publish",
 	"author": "amberHe <1542588809@qq.com>",
 	"homepage": "https://github.com/19934488173/amber-cli-dev#readme",
 	"license": "ISC",
@@ -10,13 +10,6 @@
 	"directories": {
 		"lib": "lib",
 		"test": "__tests__"
-	},
-	"dependencies": {
-		"@amber-cli-dev/command": "workspace:*",
-		"@amber-cli-dev/log": "workspace:*",
-		"@amber-cli-dev/package": "workspace:*",
-		"@amber-cli-dev/utils": "workspace:*",
-		"@amber-cli-dev/request": "workspace:*"
 	},
 	"files": [
 		"lib"
@@ -29,7 +22,7 @@
 		"url": "git+https://github.com/19934488173/amber-cli-dev.git"
 	},
 	"scripts": {
-		"test": "node ./__tests__/@amber-cli-dev/init.test.js"
+		"test": "node ./__tests__/@amber-cli-dev/publish.test.js"
 	},
 	"bugs": {
 		"url": "https://github.com/19934488173/amber-cli-dev/issues"

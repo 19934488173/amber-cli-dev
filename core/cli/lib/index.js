@@ -1,7 +1,6 @@
 'use strict';
 
 import path from 'path';
-import fs from 'fs';
 import { fileURLToPath } from 'url';
 import process from 'node:process';
 import userhome from 'userhome';
@@ -17,7 +16,7 @@ import log from '@amber-cli-dev/log';
 import { exec } from '@amber-cli-dev/exec';
 import { getPackageJSON } from '@amber-cli-dev/utils';
 import getNpmSemverVersion from '@amber-cli-dev/git-pnpm-info';
-import { LOWEST_NODE_VERSION, DEFAULT_CLI_HOME } from './const.js';
+import { DEFAULT_CLI_HOME } from './const.js';
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -94,7 +93,6 @@ async function prepare() {
 	checkRoot();
 	checkUserHome();
 	checkEnv();
-	checkNodeVersion();
 	// await checkGlobalUpdate();
 }
 
@@ -149,16 +147,6 @@ function checkRoot() {
 	rootCheck();
 };
 
-
-/** 检查node版本号 */
-function checkNodeVersion() {
-	//第一步，获取当前node版本号
-	const currentVersion = process.version;
-	//第二步，比对最低版本号
-	if (!semver.gte(currentVersion, LOWEST_NODE_VERSION)) {
-		throw new Error(colors.red(`amber-cli 需要安装v${LOWEST_NODE_VERSION}以上版本的Node.js`))
-	}
-};
 
 /** 1,检查包版本号 */
 function checkPkgVersion() {

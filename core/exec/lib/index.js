@@ -4,7 +4,8 @@ import path from 'path';
 import { pathToFileURL } from 'url';
 import Package from '@amber-cli-dev/package';
 import log from '@amber-cli-dev/log';
-import { executeFile } from '@amber-cli-dev/utils';
+import { exec as spawn } from '@amber-cli-dev/utils';
+
 
 const SETTINGS = {
   init: '@imooc-cli/init',
@@ -34,8 +35,11 @@ export async function exec() {
 
     pkg = new Package({ targetPath, storeDir, packageName, packageVersion });
 
+
+
     if (await pkg.exists()) {
       //更新package
+      await pkg.update();
     } else {
       //安装package
       await pkg.install()
@@ -47,14 +51,42 @@ export async function exec() {
 
   };
 
-  console.log(await pkg.exists())
-
-
-
   const rootFile = pkg.getRootFilePath();
-  if (rootFile) {
-    //读取文件并执行默认方法
-    await executeFile(rootFile, ...arguments)
-  }
 
-}
+  if (rootFile) {
+    try {
+      // 在node子进程中调用
+      const args = Array.from(arguments);
+      const cmd = args[args.length - 1];
+      const o = Object.create(null);
+      Object.keys(cmd).forEach(key => {
+        if (cmd.hasOwnProperty(key) &&
+          !key.startsWith('_') &&
+          key !== 'parent') {
+          o[key] = cmd[key];
+        }
+      });
+      args[args.length - 1] = o;
+
+      const fileUrl = pathToFileURL(rootFile);
+      const module = await import(fileUrl.href);
+      const code = `${module.default.call(null, JSON.stringify(args))}`;
+
+      const child = spawn('node', ['-e', code], {
+        cwd: process.cwd(),
+        stdio: 'inherit',
+      });
+      child.on('error', e => {
+        log.error(e.message);
+        process.exit(1);
+      });
+      child.on('exit', e => {
+        log.verbose('命令执行成功:' + e);
+        process.exit(e);
+      });
+    } catch (error) {
+      log.error(error.message);
+    };
+
+  };
+};

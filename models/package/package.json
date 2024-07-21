@@ -15,6 +15,7 @@
 		"@amber-cli-dev/format-path": "workspace:*",
 		"@amber-cli-dev/git-pnpm-info": "workspace:*",
 		"@amber-cli-dev/utils": "workspace:*",
+		"fs-extra": "^11.2.0",
 		"npminstall": "^7.12.0",
 		"path-exists": "^5.0.0",
 		"pkg-dir": "^8.0.0"
