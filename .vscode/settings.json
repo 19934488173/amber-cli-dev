@@ -1,40 +1,14 @@
 {
-  "editor.tabSize": 2,
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "emmet.triggerExpansionOnTab": true,
-  "files.eol": "\n",
-  "files.autoSave": "off",
-  "editor.formatOnPaste": false,
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.associations": {
-    "*.css": "postcss"
-  },
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-  "svg.preview.background": "custom",
-  "cSpell.words": [
-    "aweme",
-    "code",
-    "favorited",
-    "Immer",
-    "loadmore",
-    "mplatform",
-    "newrank",
-    "qr",
-    "Qrcode",
-    "shanzhu"
-  ],
-  "importSorter.generalConfiguration.sortOnBeforeSave": true,
-  "editor.tokenColorCustomizations": {
-    "comments": {
-      // 设置字体样式 加粗 下划线 斜体等
-      "fontStyle": "italic", // bold italic underline
-      // 设置字体颜色
-      "foreground": "#aaaaaa"
-    }
-  }
+	"files.autoSave": "afterDelay",
+	"editor.formatOnSave": true,
+	"prettier.singleQuote": true,
+	"prettier.semi": false,
+	"prettier.requireConfig": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }

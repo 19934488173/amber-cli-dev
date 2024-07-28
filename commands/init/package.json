@@ -15,8 +15,16 @@
 		"@amber-cli-dev/command": "workspace:*",
 		"@amber-cli-dev/log": "workspace:*",
 		"@amber-cli-dev/package": "workspace:*",
+		"@amber-cli-dev/request": "workspace:*",
 		"@amber-cli-dev/utils": "workspace:*",
-		"@amber-cli-dev/request": "workspace:*"
+		"ejs": "^3.1.10",
+		"fs-extra": "^11.2.0",
+		"glob": "^11.0.0",
+		"inquirer": "^10.1.2",
+		"kebab-case": "^2.0.1",
+		"semver": "^7.6.2",
+		"spinner": "^0.3.4",
+		"user-home": "^3.0.0"
 	},
 	"files": [
 		"lib"

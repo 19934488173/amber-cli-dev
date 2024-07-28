@@ -1,11 +1,9 @@
 'use strict';
 
 import path from 'path';
-import { pathToFileURL } from 'url';
 import Package from '@amber-cli-dev/package';
 import log from '@amber-cli-dev/log';
 import { exec as spawn } from '@amber-cli-dev/utils';
-
 
 const SETTINGS = {
   init: '@imooc-cli/init',
@@ -35,22 +33,18 @@ export async function exec() {
 
     pkg = new Package({ targetPath, storeDir, packageName, packageVersion });
 
-
-
     if (await pkg.exists()) {
       //更新package
       await pkg.update();
     } else {
       //安装package
-      await pkg.install()
+      await pkg.install();
     }
-
   } else {
-
     pkg = new Package({ targetPath, packageName, packageVersion });
+  }
 
-  };
-
+  /** 要执行的js文件路径 */
   const rootFile = pkg.getRootFilePath();
 
   if (rootFile) {
@@ -59,34 +53,32 @@ export async function exec() {
       const args = Array.from(arguments);
       const cmd = args[args.length - 1];
       const o = Object.create(null);
-      Object.keys(cmd).forEach(key => {
-        if (cmd.hasOwnProperty(key) &&
+      Object.keys(cmd).forEach((key) => {
+        if (
+          cmd.hasOwnProperty(key) &&
           !key.startsWith('_') &&
-          key !== 'parent') {
+          key !== 'parent'
+        ) {
           o[key] = cmd[key];
         }
       });
       args[args.length - 1] = o;
 
-      const fileUrl = pathToFileURL(rootFile);
-      const module = await import(fileUrl.href);
-      const code = `${module.default.call(null, JSON.stringify(args))}`;
-
-      const child = spawn('node', ['-e', code], {
+      const child = spawn('node', [rootFile, JSON.stringify(args)], {
         cwd: process.cwd(),
         stdio: 'inherit',
       });
-      child.on('error', e => {
+
+      child.on('error', (e) => {
         log.error(e.message);
         process.exit(1);
       });
-      child.on('exit', e => {
+      child.on('exit', (e) => {
         log.verbose('命令执行成功:' + e);
         process.exit(e);
       });
     } catch (error) {
       log.error(error.message);
-    };
-
-  };
-};
+    }
+  }
+}

@@ -26,5 +26,8 @@
 	},
 	"bugs": {
 		"url": "https://github.com/19934488173/amber-cli-dev/issues"
+	},
+	"dependencies": {
+		"cli-spinner": "^0.2.10"
 	}
 }

@@ -2,8 +2,21 @@
 
 import path from 'path';
 import fs from 'fs';
-import { pathToFileURL } from 'url';
 import cp from 'child_process';
+import { Spinner } from 'cli-spinner';
+
+//加载中状态
+export function spinnerStart(msg, spinnerString = '|/-\\') {
+  const spinner = new Spinner(msg + ' %s');
+  spinner.setSpinnerString(spinnerString);
+  spinner.start();
+  return spinner;
+}
+
+//等待1s
+export function sleep(timeout = 1000) {
+  return new Promise((resolve) => setTimeout(resolve, timeout));
+}
 
 // spawn系统兼容
 export function exec(command, args, options) {
@@ -14,28 +27,6 @@ export function exec(command, args, options) {
 
   return cp.spawn(cmd, cmdArgs, options || {});
 }
-
-
-/**
- * 动态导入并执行文件中的默认导出函数
- * @param {string} filePath - 要执行的文件路径
- * @param {Array} args - 传入的参数
- */
-export async function executeFile(filePath, args) {
-  try {
-    const fileUrl = pathToFileURL(filePath); // 将文件路径转换为 file:// URL
-    const module = await import(fileUrl.href);
-
-    if (module && typeof module.default === 'function') {
-      module.default.call(null, args); // 调用默认导出的函数
-    } else {
-      console.error(`The module at ${filePath} does not have a default export or it is not a function.`);
-    }
-  } catch (err) {
-    console.error(`Error importing module at ${filePath}:`, err);
-  }
-}
-
 
 /** 解析json文件 */
 export function parsePackageJSON(pkgPath) {
@@ -48,7 +39,6 @@ export function getPackageJSON(filename) {
   const pkgPath = path.resolve(filename, '../../package.json');
   return parsePackageJSON(pkgPath);
 }
-
 
 /** 检查参数是否为object */
 export function isObject(param) {
